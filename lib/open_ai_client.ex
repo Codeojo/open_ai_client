@@ -113,7 +113,7 @@ defmodule OpenAiClient do
 
   defp set_headers(%Req.Request{} = req, options) when is_list(options) do
     req
-    |> put_new_header("openai-beta", "assistants=v1")
+    |> put_new_header("openai-beta", "assistants=v2")
     |> then(
       &if options[:openai_organization],
         do: put_new_header(&1, "openai-organization", options[:openai_organization]),
